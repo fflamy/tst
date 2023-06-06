@@ -36,7 +36,7 @@ namespace ApiProject.WebApi.Controllers
 		/// <param name="cancellationToken">Токен отмены.</param>
 		/// <returns> результат.</returns>
 		[HttpPost]
-		public async Task Post([ModelBinder(BinderType = typeof(CustomKeyValuePairBinder))][FromBody] List<KeyValuePair<int, string>> objects, CancellationToken cancellationToken)
+		public async Task Post([FromBody][ModelBinder(BinderType = typeof(CustomKeyValuePairBinder))]List<KeyValuePair<int, string>> objects, CancellationToken cancellationToken)
 		{
 			var request = new AddObjects.Command { Objects = objects };
 			await _mediator.Send(request, cancellationToken);

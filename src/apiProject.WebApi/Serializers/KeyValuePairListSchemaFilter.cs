@@ -19,7 +19,6 @@ namespace ApiProject.WebApi.Serializers
 				{
 					{ "Value", new OpenApiSchema { Type = "string", } },
 				},
-					Required = new HashSet<string> { "Key", "Value" },
 					AdditionalPropertiesAllowed = false,
 				};
 			}
