@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\apiProject.Buisness\apiProject.Buisness.csproj" />
+    <ProjectReference Include="..\ApiProject.Core\ApiProject.Core.csproj" />
     <ProjectReference Include="..\DAL\ApiProject.DAL.csproj" />
   </ItemGroup>
 

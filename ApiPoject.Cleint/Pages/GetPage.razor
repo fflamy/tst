@@ -1,0 +1,41 @@
+﻿@page "/get"
+@using ApiPoject.Cleint.Data;
+@using ApiProject.Core.Entities;
+
+@inject ObjectsService service;
+
+<h3>GetPage</h3>
+<button style="background-color:green" @onclick="FetchResults">Fetch</button>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Code</td>
+        <td>Value</td>
+    </tr>
+    @for (int i = 0; i < Objects.Count; i++)
+    {
+        var obj = Objects[i];
+        <tr>
+            <td>@obj.Id</td>
+            <td>@obj.Code</td>
+            <td>@obj.Value</td>
+        </tr>
+    }
+
+</table>
+
+@code {
+    private List<ApiObject> Objects { get; set; } = new();
+    private int take = 10;
+    private int skip = 0;
+    private async Task FetchResults()
+    {
+        var list = await service.FetchDataAsync(take,skip);
+        if (list.Any())
+        {
+            skip += take;
+            Objects.AddRange(list);
+        }
+    }
+
+}

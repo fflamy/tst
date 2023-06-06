@@ -1,6 +1,6 @@
-﻿using ApiProject.Core.Pagination;
+﻿using ApiProject.Core.Entities;
+using ApiProject.Core.Pagination;
 using ApiProject.DAL;
-using ApiProject.DAL.Entities;
 using ApiProject.DAL.Extentions;
 using AutoMapper;
 using MediatR;
@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ApiProject.Buisness.Objects
 {
-	/// <summary>
-	/// Получение списка объектов.
-	/// </summary>
-	public static class GetObjects
+    /// <summary>
+    /// Получение списка объектов.
+    /// </summary>
+    public static class GetObjects
     {
         /// <summary>
         /// Запрос на пагинированный список объектов.

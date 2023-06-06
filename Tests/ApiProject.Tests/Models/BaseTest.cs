@@ -1,6 +1,8 @@
-﻿namespace ApiProject.Tests.Models
+﻿using ApiProject.Core.Entities;
+
+namespace ApiProject.Tests.Models
 {
-	internal abstract class BaseTest<T, TResponse>
+    internal abstract class BaseTest<T, TResponse>
 		where T : IRequest<TResponse>
 	{
 		protected static ApiDbContext AppDbContext => TestContext.Instance.AppDbContext;

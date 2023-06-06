@@ -2,6 +2,7 @@ using ApiProject.Buisness;
 using ApiProject.DAL;
 using ApiProject.WebApi.Serializers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,10 @@ using (var scope = app.Services.CreateScope())
 	using var context = scope.ServiceProvider.GetService<ApiDbContext>();
 	context!.Database.EnsureCreated();
 }
+
+int port = builder.Configuration.GetValue<int>("Port");
+
+app.Urls.Add($"https://0.0.0.0:{port}");
 
 app.UseSwagger();
 app.UseSwaggerUI();

@@ -1,17 +1,16 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using ApiProject.Core;
+using ApiProject.Core.Entities;
 using ApiProject.DAL;
-using ApiProject.DAL.Entities;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiProject.Buisness.Objects
 {
-	/// <summary>
-	/// Метод добавления объектов.
-	/// </summary>
-	public static class AddObjects
+    /// <summary>
+    /// Метод добавления объектов.
+    /// </summary>
+    public static class AddObjects
 	{
 		/// <summary>
 		/// Запрос на добавление объектов.

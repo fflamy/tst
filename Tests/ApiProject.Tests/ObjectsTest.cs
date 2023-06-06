@@ -1,9 +1,9 @@
 ﻿using ApiProject.Buisness.Objects;
-using ApiProject.Core;
+using ApiProject.Core.Entities;
 
 namespace ApiProject.Tests
 {
-	internal class GetObjectTests : BaseTest<GetObjects.Command, List<ApiObject>>
+    internal class GetObjectTests : BaseTest<GetObjects.Command, List<ApiObject>>
 	{
 		[Test]
 		public async Task GetList_Success()

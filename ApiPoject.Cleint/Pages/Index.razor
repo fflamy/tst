@@ -1,0 +1,55 @@
+﻿@page "/"
+@using ApiPoject.Cleint.Data;
+@using ApiPoject.Cleint.Models;
+
+@inject ObjectsService service;
+
+
+<div id="ObjectsPost">
+    @for (int i = 0; i < objectsList.Count; i++)
+    {
+        <div class="objectWrapper">
+            <label data-name="key">@objectsList[i].Key</label>
+            <label data-name="value">@objectsList[i].Value</label>
+        </div>
+    }
+    <div>
+        <label style="color:red;">Add to collection</label>
+        <input type="number" @bind-value=@objectDto.Code/>
+        <input @bind-value=@objectDto.Value/>
+        <button @onclick="Add">+</button>
+    </div>
+
+    @if (objectsList.Any())
+    {
+        <button style="background-color:green;" @onclick="Send">SendToDB</button>
+    }
+</div>
+
+@code {
+    ObjectDto objectDto = new() { Code = 0, Value = "" };
+
+    string addingObjectDivClass = "";
+    List<KeyValuePair<int, string>> objectsList = new();
+
+    private void Add()
+    {
+        if (string.IsNullOrEmpty(objectDto.Value) || objectDto.Code<=0)
+        {
+            return;
+        }
+        else
+        {
+            objectsList.Add(new(objectDto.Code, objectDto.Value));
+            objectDto = new() { Code = 0, Value = "" };
+        }
+    } 
+    private async Task Send()
+    {
+        var isSuccess = await service.PostObjects(objectsList);
+        if (isSuccess)
+        {
+            objectsList.Clear();
+        }
+    }
+}

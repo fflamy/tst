@@ -1,13 +1,13 @@
 ﻿using ApiProject.Buisness.Objects;
-using ApiProject.DAL.Entities;
+using ApiProject.Core.Entities;
 using ApiProject.WebApi.Serializers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiProject.WebApi.Controllers
 {
-	/// <inheritdoc/>
-	[Route("api/[controller]")]
+    /// <inheritdoc/>
+    [Route("api/[controller]")]
 	[ApiController]
 	public class ObjectsController : ControllerBase
 	{

@@ -1,13 +1,13 @@
-﻿using ApiProject.DAL.Entities;
+﻿using ApiProject.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ApiProject.DAL
 {
-	/// <summary>
-	/// Контекст базы данных.
-	/// </summary>
-	public class ApiDbContext : DbContext
+    /// <summary>
+    /// Контекст базы данных.
+    /// </summary>
+    public class ApiDbContext : DbContext
 	{
 		/// <summary>
 		/// Конструктор.

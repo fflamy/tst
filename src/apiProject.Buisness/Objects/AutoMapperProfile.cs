@@ -1,11 +1,10 @@
-﻿using ApiProject.Core;
-using ApiProject.DAL.Entities;
+﻿using ApiProject.Core.Entities;
 using AutoMapper;
 
 namespace ApiProject.Buisness.Objects
 {
-	/// <inheritdoc/>
-	public class AutoMapperProfile : Profile
+    /// <inheritdoc/>
+    public class AutoMapperProfile : Profile
 	{
 		/// <summary>
 		/// Конструктор <see cref="AutoMapperProfile"/>.
